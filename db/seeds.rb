@@ -9,4 +9,8 @@ Project.create name: 'Ironhack', description: 'Ironhack is a...'
 Project.create name: 'Time tracking app'
 Project.create name: 'Recipe', description: 'Track favorite recipes'
 Project.create name: 'cheesecake', description: 'Authentic Italian cheesecake'
-Project.create name: 'Waze', description: 'An app that saves my commuting life'
+project = Project.create name: 'Waze', description: 'An app that saves my commuting life'
+entry = Entry.create project_id: project.id, hours: 1, minutes: 30, comments: 'First entry', date: 30
+entry = Entry.create project_id: project.id , hours: 2, minutes: 45, comments: 'Second entry', date: 15
+entry = Entry.create project_id: project.id, hours: 3, minutes: 10, comments: 'Third entry', date: 5
+
