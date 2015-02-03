@@ -1,6 +1,8 @@
-Rails.application.routes.draw do
+Timetracking::Application.routes.draw do
   get '/' => 'site#home'
   get '/contact' => 'site#contact'
+  get '/projects' => 'projects#index'
+  get '/projects/:id' => 'projects#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
