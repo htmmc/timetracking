@@ -4,7 +4,7 @@ class Entry < ActiveRecord::Base
 	validates :hours, numericality: true
 	validates :date, presence: true
 	validates :hours, presence: true
-	validates :minutes, presence: true
+	validates :minutes, presence: true, numericality: true
 	validates_associated :project
 	
 end
