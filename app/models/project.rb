@@ -2,7 +2,10 @@
 class Project < ActiveRecord::Base
 	has_many :entries
 	
-	validates (:name, {uniqueness: true, presence: true, length: {maximum: 30}, inclusion: {/\A[0-9]/}})
+	validates :name, uniqueness: true
+	validates :name, presence: true
+	validates :name, length: {maximum: 30}
+	validates :name, format: {with: /\A[0-9]/}
 
 	def self.iron_find(id)
 		where(id: id).first
