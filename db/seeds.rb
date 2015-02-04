@@ -10,7 +10,9 @@ Project.create name: 'Time tracking app'
 Project.create name: 'Recipe', description: 'Track favorite recipes'
 Project.create name: 'cheesecake', description: 'Authentic Italian cheesecake'
 project = Project.create name: 'Waze', description: 'An app that saves my commuting life'
-entry = Entry.create project_id: project.id, hours: 1, minutes: 30, comments: 'First entry', date: 30
-entry = Entry.create project_id: project.id , hours: 2, minutes: 45, comments: 'Second entry', date: 15
-entry = Entry.create project_id: project.id, hours: 3, minutes: 10, comments: 'Third entry', date: 5
+entry = Entry.create project_id: project.id, hours: 1, minutes: 30, comments: 'First entry', date: 2014-12-31
+entry.project = project
+entry.save
 
+project.entries.create hours: 2, minutes: 45, comments: 'Second entry', date: 2015
+project.entries.create hours: 3, minutes: 10, comments: 'Third entry', date: 2015
