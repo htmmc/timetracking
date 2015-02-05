@@ -16,6 +16,7 @@ class EntriesController < ApplicationController
 
 		if @entry.save
 			flash[:notice] = "Entry created successfully!"
+			UserMailer.entry_created(@project).deliver
 			redirect_to project_entries_path(@project) 
 			#action: 'index', controller: 'entries', project_id: @project.id
 		else 
@@ -44,7 +45,7 @@ class EntriesController < ApplicationController
 		@entry = @project.entries.find params[:id]
 		@entry.delete
 		redirect_to project_entries_path
-	end 
+	end
 
 	private 
 	def entry_params
