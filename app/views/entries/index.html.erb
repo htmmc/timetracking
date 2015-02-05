@@ -1,2 +1,18 @@
 <h1><%= @project.name %></h1>
-<p>Total Hours Worked in this month: <%= @project.total_hours_in_month(@date.month, @date.year) %>  hours </p>
+<p>Total Hours Worked in this month: <%= @project.total_hours_in_month(@date.month, @date.year) %> hours </p>
+<ul>
+<% @project.entries.each do |entry| %>
+<li>Entry ID: <%= entry.id %> - <%=entry.hours %> h <%= format("%.2d", entry.minutes) %> m- <%= entry.date.strftime("%Y-%m-%d") %> Comments: <%= entry.comments %> 
+	<%= link_to("Edit", edit_project_entry_path(@project, entry)) %>
+	<%= link_to('Delete', project_entry_path(@project,entry), method: :delete, data: {confirm:'Are you sure?'}) %>
+</li>
+<% end %>
+</ul>
+
+<% if flash[:notice] %>
+	<%= flash[:notice] %>
+<% end %>
+<br>
+<%= link_to("To the List", projects_path) %>
+<br>
+<%= link_to("New Entry", new_project_entry_path(@project)) %>

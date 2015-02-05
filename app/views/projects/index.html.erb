@@ -1,12 +1,13 @@
 <ul>
 	<% @projects.each do |project| %>
-	<li><% if project.description.nil? %>
-			<a href="projects/<%= project.id %>"><%= project.name %></a> 
-		<% else %>
-			 <a href="projects/<%= project.id %>"><%= project.name %></a> - <%= project.description %></li>
+	<li><%= link_to(project.name, project_entries_path(project)) %>
+		<% if project.description.present? %>
+		- <%= project.description %>
 		<% end %>
+	</li>
 	<% end %>
-</ul>
+</ul>	
+
 <%# @projects.each do |project| %>
 <%# if project.description.present? %>
 <%#=project.description %>
