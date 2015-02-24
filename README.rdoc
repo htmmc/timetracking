@@ -1,28 +1,10 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an exercise done at Ironhack. 
 
-Things you may want to cover:
+This is the first exercise for Ruby on Rails. 
 
-* Ruby version
+* There are two classes: Project and Entry. Project has entries and Entry belongs to Project. 
 
-* System dependencies
+* User can make a list of projects, add/edit/delete times to each entry of the particular project.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
