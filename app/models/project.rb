@@ -30,4 +30,5 @@ class Project < ActiveRecord::Base
 		end
 		(minutes/60) + hours 
 	end
+	
 end

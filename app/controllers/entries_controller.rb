@@ -17,6 +17,7 @@ class EntriesController < ApplicationController
 		if @entry.save
 			flash[:notice] = "Entry created successfully!"
 			UserMailer.entry_created(@project).deliver
+			#entry_created is a class method. 
 			redirect_to project_entries_path(@project) 
 			#action: 'index', controller: 'entries', project_id: @project.id
 		else 
